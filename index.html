@@ -1,36 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="./css/style.css">
     <title>Document</title>
 </head>
+
 <body>
-    <main>
+    <main id="app">
         <div class="container">
             <h1>Demo</h1>
-            <p class="text-color-gray">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Totam repellat molestias voluptas magnam quidem illo accusantium cupiditate. </p>
+            <p class="text-color-gray">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Totam repellat
+                molestias voluptas magnam quidem illo accusantium cupiditate. </p>
 
             <div class="list-container">
                 <h3>Today</h3>
                 <hr>
-                
-                <div class="listed-elements">
+
+                <div class="listed-elements" v-for="(item, index) in todo">
+
                     <ul>
-                        <li><i class="fas fa-check done checker-container"></i><span>Fare la spesa</span><span class="badge text-bg-danger mx-2">Molto importante</span></li>
-                        <li><i class="fas fa-check done checker-container"></i><span>Bere un sorso d'acqua</span><span class="badge text-bg-warning text-white mx-2">Importante</span></li>
-                        <li><i class="fas fa-check undone checker-container"></i><span>Andare a correre</span><span class="badge text-bg-success mx-2">Normale</span></li>
-                        <li><i class="fas fa-check undone checker-container"></i><span>Fare un pisolino</span><span class="badge text-bg-success mx-2">Normale</span></li>
+                        <li>
+                            <div v-if="item.done">
+                                <i class="fas fa-check done checker-container"></i>
+                            </div>
+                            <div v-if="!item.done">
+                                <i class="fas fa-check undone checker-container"></i>
+                            </div>
+                            <span>{{ item.text }}</span>
+                            <span class="badge text-bg-danger mx-2">Molto importante</span>
+                        </li>
                     </ul>
                 </div>
             </div>
         </div>
     </main>
-    
+
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <script src="./js/script.js" type="text/javascript"></script>
 </body>
+
 </html>
