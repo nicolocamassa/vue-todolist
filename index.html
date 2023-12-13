@@ -27,15 +27,15 @@
                 <div class="listed-elements" v-for="(item, index) in todo">
 
                     <ul>
-                        <li>
+                        <li @click="done(index)">
                             <div v-if="item.done">
                                 <i class="fas fa-check done checker-container"></i>
                             </div>
                             <div v-if="!item.done">
                                 <i class="fas fa-check undone checker-container"></i>
                             </div>
-                            <span>{{ item.text }}</span>
-                            <span class="badge text-bg-danger mx-2">Molto importante</span>
+                            <span :class="{ 'line-text': item.done }">{{ item.text }}</span>
+
                         </li>
                     </ul>
                 </div>

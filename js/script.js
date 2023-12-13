@@ -24,6 +24,8 @@ createApp({
         }
     },
     methods: {
-        
+        done(index){
+            this.todo[index].done = !this.todo[index].done;
+        }
     },
 }).mount('#app')

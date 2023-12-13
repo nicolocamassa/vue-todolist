@@ -64,6 +64,10 @@ span{
     color: white;
 }
 
+.line-text{
+    text-decoration: line-through;
+}
+
 .done{
     background-color: rgb(97, 223, 175);
 }
