@@ -25,20 +25,21 @@
                 <hr>
 
                 <div class="listed-elements" v-for="(item, index) in todo">
-
-                    <ul>
-                        <li @click="done(index)">
-                            <div v-if="item.done">
-                                <i class="fas fa-check done checker-container"></i>
-                            </div>
-                            <div v-if="!item.done">
-                                <i class="fas fa-check undone checker-container"></i>
-                            </div>
-                            <span :class="{ 'line-text': item.done }">{{ item.text }}</span>
-
-                        </li>
+                    <ul class="p-0">
+                      <li @click="done(index)" class="clearfix">
+                        <div v-if="item.done" class="float-left">
+                          <i class="fas fa-check done checker-container"></i>
+                        </div>
+                        <div v-if="!item.done" class="float-left">
+                          <i class="fas fa-check undone checker-container"></i>
+                        </div>
+                        <span :class="{ 'line-text': item.done }" class="float-left">{{ item.text }}</span>
+                        <span class="text-danger remove-todo">Remove</span>
+                      </li>
                     </ul>
-                </div>
+                  </div>
+                  
+                  
             </div>
         </div>
     </main>
