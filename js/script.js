@@ -6,14 +6,14 @@ createApp({
                 todo: [
                 {
                     text: 'Fare la spesa',
-                    done: true
-                },
-                {
-                    text: 'Fare la spesa',
                     done: false
                 },
                 {
-                    text: 'Fare la spesa',
+                    text: 'Cercare il cane',
+                    done: false
+                },
+                {
+                    text: 'Fare un pisolino',
                     done: false
                 },
                 {
@@ -26,6 +26,9 @@ createApp({
     methods: {
         done(index){
             this.todo[index].done = !this.todo[index].done;
+        },
+        remove(index){
+            this.todo.splice(index, 1);
         }
     },
 }).mount('#app')

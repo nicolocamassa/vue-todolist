@@ -24,19 +24,21 @@
                 <h3>Today</h3>
                 <hr>
 
-                <div class="listed-elements" v-for="(item, index) in todo">
+                <div class="listed-elements" >
                     <ul class="p-0">
-                      <li @click="done(index)" class="clearfix">
-                        <div v-if="item.done" class="float-left">
+                        
+                      <li class="clearfix" v-for="(item, index) in todo" >
+                        <div v-if="item.done" class="float-left" @click="done(index)">
                           <i class="fas fa-check done checker-container"></i>
                         </div>
-                        <div v-if="!item.done" class="float-left">
+                        <div v-if="!item.done" class="float-left" @click="done(index)">
                           <i class="fas fa-check undone checker-container"></i>
                         </div>
-                        <span :class="{ 'line-text': item.done }" class="float-left">{{ item.text }}</span>
-                        <span class="text-danger remove-todo">Remove</span>
+                        <span :class="{ 'line-text': item.done }" class="float-left" @click="done(index)">{{ item.text }}</span>
+                        <span class="text-danger remove-todo" @click="remove(index)">Remove</span>
                       </li>
                     </ul>
+                    
                   </div>
                   
                   
