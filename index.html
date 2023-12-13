@@ -24,24 +24,41 @@
                 <h3>Today</h3>
                 <hr>
 
-                <div class="listed-elements" >
+                <div class="listed-elements">
                     <ul class="p-0">
-                        
-                      <li class="clearfix" v-for="(item, index) in todo" >
-                        <div v-if="item.done" class="float-left" @click="done(index)">
-                          <i class="fas fa-check done checker-container"></i>
-                        </div>
-                        <div v-if="!item.done" class="float-left" @click="done(index)">
-                          <i class="fas fa-check undone checker-container"></i>
-                        </div>
-                        <span :class="{ 'line-text': item.done }" class="float-left" @click="done(index)">{{ item.text }}</span>
-                        <span class="text-danger remove-todo" @click="remove(index)">Remove</span>
-                      </li>
+
+                        <li class="clearfix" v-for="(item, index) in todo">
+                            <div v-if="item.done" class="float-left" @click="done(index)">
+                                <i class="fas fa-check done checker-container"></i>
+                            </div>
+                            <div v-if="!item.done" class="float-left" @click="done(index)">
+                                <i class="fas fa-check undone checker-container"></i>
+                            </div>
+                            <span :class="{ 'line-text': item.done }" class="float-left" @click="done(index)">{{
+                                item.text }}</span>
+                            <span class="text-danger remove-todo" @click="remove(index)">Remove</span>
+                        </li>
                     </ul>
+                </div>
+
+
+
+                <div class="input-section">
+                    <div class="row">
+                        <div class="col-10">
+                            <input type="text" id="disabledTextInput" class="form-control mb-3" placeholder="Inserisci le cose da fare" v-model="textNew">
+                        </div>
+                        <div class="col-2">
+                            <button type="submit" class="btn btn-primary" @click="addTask">Aggiungi</button>
+                        </div>
+                    </div>
                     
-                  </div>
-                  
-                  
+
+                    
+                </div>
+
+
+
             </div>
         </div>
     </main>

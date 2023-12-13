@@ -92,6 +92,11 @@ li{
     right: 0;
 }
 
+.input-section{
+    bottom: 0;
+    position: absolute;
+}
+
 .container{
     border-radius: 20px;
     width: 40%;
@@ -99,6 +104,7 @@ li{
     background-color: rgb(255, 255, 255);
     margin: 0 auto;
     padding: 80px;
+    position: relative;
 }
 
 .list-container{

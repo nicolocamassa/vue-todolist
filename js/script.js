@@ -1,9 +1,10 @@
 const { createApp } = Vue;
 
 createApp({
-    data(){
-        return{
-                todo: [
+    data() {
+        return {
+            textNew: '',
+            todo: [
                 {
                     text: 'Fare la spesa',
                     done: false
@@ -24,11 +25,22 @@ createApp({
         }
     },
     methods: {
-        done(index){
+        done(index) {
             this.todo[index].done = !this.todo[index].done;
         },
-        remove(index){
+        remove(index) {
             this.todo.splice(index, 1);
+        },
+        addTask() {
+
+            let newObj = {
+                text: this.textNew,
+                done: false
+            }
+
+            this.todo.push(newObj);
+
+            this.textNew = '';
         }
     },
 }).mount('#app')
